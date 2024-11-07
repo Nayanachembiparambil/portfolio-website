@@ -96,8 +96,11 @@
     width: 0;
   }
 }
-
-
+@media only screen and (max-width:768px) {
+	.img {
+		overflow-y: hidden;	
+}
+}
 /* project image zoom effect */
 
 .zoom-effect {
@@ -109,6 +112,39 @@
   transform: scale(1.1);
 }
 
+/* form styles */
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #dae906;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #f0d804;
+}
+
+.container {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  padding: 20px;
+}
 
 </style>
 
@@ -573,7 +609,34 @@
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/1nXYA-VI0WRnQ5o-361akP2Yr97SaS8g4b2jpGNV_-CY" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+					<!-- <h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/1nXYA-VI0WRnQ5o-361akP2Yr97SaS8g4b2jpGNV_-CY" class="btn btn-primary py-3 px-5">Click Here</a> </h2> -->
+					<!-- contact form -->
+					<h3>Contact Form</h3>
+
+					<div class="container">
+					  <form action="https://api.web3forms.com/submit" method="POST">
+						<input type="hidden" name="access_key" value="b382a1d1-1793-4681-93fc-069b5c62dea9">
+
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name..">
+					
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+					
+						<label for="country">Country</label>
+						<select id="country" name="country">
+						  <option value="australia">India</option>
+						  <option value="canada">Canada</option>
+						  <option value="usa">USA</option>
+						</select>
+					
+						<label for="subject">Message</label>
+						<textarea id="subject" name="message" placeholder="Write something.." style="height:200px"></textarea>
+					
+						<input type="submit" value="Submit">
+					  </form>
+					</div>
+					
 				</div>
 			</div>
 				<br>
